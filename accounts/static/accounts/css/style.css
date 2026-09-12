@@ -1,0 +1,65 @@
+.profile_form, .login_form, .password_change_form, .password_div, .reset_form{
+    font-family: 'Courier New', Courier, monospace;
+    width: 50%;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #376f9f;
+    border-radius: 20px;
+    box-shadow: 0 0 30px #ffffff;
+}
+
+.profile_form label, .login_form label, .password_change_form label, .reset_form label{
+    width: 25%;
+    display: inline-block;
+    margin-right: 5%;
+}
+
+.profile_form input, .profile_form select, .login_form input, .password_change_form input, .reset_form input{
+    width: 60%;
+    margin: 10px 0;
+    padding: 5px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.profile_form input[type=checkbox]
+{
+    width: 13px;
+}
+
+.profile_form label[for=image-clear_id]
+{
+    width: 10%;
+}
+
+.profile_form .button, .login_form .button, .password_change_form .button, .reset_form .button, .password_div .button
+{
+    display: inline-block;
+    width: 40%;
+    margin: 2%;
+    background-color: #ffce3e;
+    color: #000000;
+    padding: 10px 5px;
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 1s;
+}
+
+.profile_form .button:hover, .login_form .button:hover, .password_change_form .button:hover, .reset_form .button:hover, .password_div .button:hover{
+    box-shadow: 0 0 20px #ffffff;
+}
+
+.profile_form img
+{
+    width: 15%;
+    border-radius: 100%;
+}
+.error
+{
+    color: rgb(170, 0, 0);
+    font-weight: bold;
+}
