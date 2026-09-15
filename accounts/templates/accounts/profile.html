@@ -1,0 +1,18 @@
+{% extends 'core/base.html'%}
+{% block title%}Профиль{% endblock title %}
+
+{% block content %}
+
+<form method="post" class="profile_form" enctype="multipart/form-data">
+    <h2>Профиль покупателя</h2>
+    {%csrf_token%}
+    {%if uploaded_image%}
+    <img src="{{uploaded_image.url}}">
+    {%endif%}
+    {{userform}}
+    {{profile_form}}
+    <input type="submit" value="Сохранить" class="button">
+    <a href="{%url 'password_change'%}" class="button">Сменить пароль</a>
+</form>
+
+{% endblock content %}

@@ -1,0 +1,75 @@
+body
+{     
+    margin: 0;
+    background-color: rgb(31, 31, 31);
+    color: white;
+}
+.header
+{
+    background: linear-gradient(90deg, #376f9f, #ffce3e);
+}
+h1
+{
+    display: inline-block;
+    width: 20%;  
+    color: white;
+    font-size: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    margin: 20px 2%;
+    vertical-align: bottom;
+}
+
+.logo
+{
+    display: inline-block;
+    width: 5%;
+   margin: 20px 2%;
+    vertical-align: bottom;
+}
+
+.buttons
+{
+    display: block;
+    width: 40%;
+    margin: 10px 2%;
+    float: right;
+}
+.button
+{
+    text-decoration: none;
+}
+.icon
+{
+    width: 10%;
+    margin: 20px 3%;
+    opacity: 0.8;
+    transition-duration: 0.5s;
+}
+.icon:hover
+{
+    transform: scale(1.2);
+    opacity: 1;
+}
+.logout_form
+{
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+.logout_button
+{
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    width: 100%;
+}
+.logout_icon
+{
+    width: 100%;
+    margin: 20px 3%;
+}
+
