@@ -15,7 +15,7 @@
     <a href="{%url 'catalog'%}" class="button">
         <img src="{% static 'core/img/products.png'%}" class="icon">
     </a>
-
+    {%if user.is_authenticated%}
     <a href="{%url 'delivery'%}" class="button">
         <img src="{% static 'core/img/delivery.png'%}" class="icon">
     </a>
@@ -23,7 +23,6 @@
     <a href="{%url 'cart'%}" class="button">
         <img src="{% static 'core/img/cart.png'%}" class="icon">
     </a>
-    {% if user.is_authenticated%}
 
     <a href="{%url 'profile' user.username %}" class="button">
         <img src="{% static 'core/img/profile.png'%}" class="icon">
@@ -38,6 +37,10 @@
     {% else %}
     <a href="{%url 'login'%}" class="button">
         <img src="{% static 'core/img/login.png'%}" class="icon">
+    </a>
+
+    <a href="{%url 'user_registration'%}" class="button">
+        <img src="{% static 'core/img/registration.png'%}" class="icon">
     </a>
     {%endif%}
 </div>

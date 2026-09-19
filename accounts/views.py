@@ -1,6 +1,8 @@
 from django.contrib.auth.models import User
+from django.urls import reverse_lazy
+from django.views.generic import CreateView
 from django.shortcuts import render, redirect
-from .forms import  UserForm,ProfileForm
+from .forms import  UserForm,ProfileForm,UserRegistrationForm
 from django.views import View
 from .models import Profile
 
@@ -19,7 +21,6 @@ class ProfileView(View):
         profile = Profile.objects.get(user=user.pk)
         profile_form = ProfileForm(request.POST,request.FILES,instance=profile)
         uploaded_image=profile.image
-        print(88888888888)
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
@@ -30,3 +31,9 @@ class ProfileView(View):
 #     user_form = UserForm()
 #     profile_form=ProfileForm()
 #     return render(request,"accounts/profile.html",context={"userform":user_form, "profile_form":profile_form})
+
+class UserRegistrationView(CreateView):
+    model =User
+    from_class = UserRegistrationForm()
+    template_name = 'accounts/user_regestration.html'
+    success_url = reverse_lazy('login ')

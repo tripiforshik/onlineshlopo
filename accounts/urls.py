@@ -3,7 +3,7 @@ from tkinter.font import names
 from django.contrib.auth.views import LoginView,PasswordChangeView,PasswordChangeDoneView
 from django.contrib.auth.views import LogoutView,PasswordResetView,PasswordResetDoneView,PasswordResetConfirmView,PasswordResetCompleteView
 from django.urls import path,include
-from .views import  ProfileView
+from .views import  ProfileView,UserRegistrationView
 
 urlpatterns = [
     path('profile/<str:user_name>/',ProfileView.as_view(),name="profile"),
@@ -14,5 +14,6 @@ urlpatterns = [
     path('password_reset/',PasswordResetView.as_view(),name='password_reset'),
     path('password_reset_done/',PasswordResetDoneView.as_view(),name='password_reset_done'),
     path('password_reset/<uidb64>/<token>/',PasswordResetConfirmView.as_view(),name='password_reset_confirm'),
-    path('password_reset_complete/',PasswordResetCompleteView.as_view(),name="password_reset_complete")
+    path('password_reset_complete/',PasswordResetCompleteView.as_view(),name="password_reset_complete"),
+    path('user_regestration/',UserRegistrationView.as_view(),name='user_registration'),
 ]
