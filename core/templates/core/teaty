@@ -1,0 +1,3 @@
+<a href="{%url 'user_registration'%}" class="button">
+        <img src="{% static 'core/img/registration.png'%}" class="icon">
+    </a>
