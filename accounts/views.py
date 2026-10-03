@@ -1,10 +1,12 @@
 from django.contrib.auth.models import User
+from django.core.handlers.exception import response_for_exception
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from django.shortcuts import render, redirect
 from .forms import  UserForm,ProfileForm,UserRegistrationForm
 from django.views import View
 from .models import Profile
+
 
 class ProfileView(View):
     def get(self,request,user_name):
@@ -34,6 +36,10 @@ class ProfileView(View):
 
 class UserRegistrationView(CreateView):
     model =User
-    from_class = UserRegistrationForm()
-    template_name = 'accounts/user_regestration.html'
-    success_url = reverse_lazy('login ')
+    form_class =UserRegistrationForm
+    template_name = 'accounts/user_registration.html'
+    success_url = reverse_lazy('login')
+    def form_valid(self, form):
+        response=super().form_valid(form)
+        Profile.objects.create(user=self.object)
+        return response
