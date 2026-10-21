@@ -1,0 +1,89 @@
+.orders
+{
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: rgb(52, 52, 52);
+    box-shadow: 0 0 20px #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.order_block .img_block
+{
+    display: inline-block;
+    width: 20%;
+}
+.order_block img
+{
+    width: 100%;
+    border-radius: 10px;
+}
+.order_block .info_block
+{
+    display: inline-block;
+    width: 70%;
+    vertical-align: top;
+}
+.price
+{
+    color: #376f9f;
+}
+.product_name
+{
+    color: #ffce3e;
+}
+.order_block h3, .order_block h4, .order_block p
+{
+    margin: 10px;
+}
+.orders .button
+{
+    display: block;
+    width: 30%;
+    margin: 10px auto;
+    background-color: #ffce3e;
+    color: #000000;
+    padding: 10px 5px;
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    transition: 1s;
+}
+.orders .button:hover
+{
+    box-shadow: 0 0 20px #ffffff;
+}
+
+.status
+{
+    display: inline-block;
+    width: 80%;
+    box-sizing: border-box;
+    padding: 5px;
+    text-align: center;
+    background-color: #376f9f;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+.created
+{
+    background-color: #cc7315;
+}
+.transit
+{
+    background-color: #178e0d;
+}
+.completed
+{
+    background-color: #376f9f;
+}
+.banner
+{
+    width: 100%;
+    border-radius: 0%;
+}

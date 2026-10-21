@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+{% block title%}Товар{% endblock title %}
+
+{% block content %}
+<form method="post" class="product_block">
+    {%csrf_token%}
+    <img src="{{product.image.url}}">
+    <div class="info">
+        <h2>{{product.name}}</h2>
+        <h3>{{product.price}}₽</h3>
+        <h4><span>Цвет: </span>{{product.color.color}}</h4>
+        <h4><span>Размер:</span></h4>
+        <select name="sizes">
+            {%for size in product.size_variants%}
+            <option value="{{size.size}}">{{size.size}}</option>
+            {%endfor%}
+        </select>
+        <h4><span>Описание:</span>{{product.description}}</h4>
+        <h4><span>Осталось: </span>{{ product.count }} шт</h4>
+        <h5><span>Доставка: </span>от 3-х дней </h5>
+        <h5><span>Возврат: </span>до 14 дней</h5>
+    </div>
+
+<input type="submit" class="button" value="В корзину">
+</form>
+{% endblock content %}

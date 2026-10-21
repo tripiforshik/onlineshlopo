@@ -2,5 +2,31 @@
 {% block title%}Корзина{% endblock title %}
 
 {% block content %}
-Корзина
+
+<div class="content">
+<form method="post" class="orders">
+    {%csrf_token%}
+<h2>Корзина</h2>
+{%if order_list%}
+{%for order in order_list %}
+<div class="order_block">
+    <div class="img_block">
+        <img src="{{order.product.image.url}}">
+    </div>
+    <div class="info_block">
+        <h3 class="product_name">{{ order.product.name }}</h3>
+        <p>Цвет: {{ order.product.color.color }}</p>
+        <p>Размер: {{ order.product.size.size }}</p>
+        <h4 class="price">Цена: {{ order.product.price }}₽</h4>
+    </div>
+</div>
+{%endfor%}
+    <h2 class="price">Итого: {{ total}}₽</h2>
+    <input type="submit" value="Заказать" class="button">
+{%else%}
+<h4>Вы пока ещё нечего не добавили в корзину.</h4>
+<a href="{%url 'catalog'%}" class="Button">Посмотреть товары</a>
+{%endif%}
+    </form>
+</div>
 {% endblock content %}

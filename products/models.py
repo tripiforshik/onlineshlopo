@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 class Size(models.Model):
     size=models.CharField(max_length=12,primary_key=True)
 
@@ -19,3 +20,7 @@ class Product(models.Model):
     image=models.ImageField(blank=True,upload_to='products')
     count=models.IntegerField()
     slug=models.SlugField()
+    def __str__(self):
+        return self.name
+    def get_absolute_url(self):
+        return reverse('product_detail',args=[self.slug])

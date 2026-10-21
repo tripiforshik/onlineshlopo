@@ -2,5 +2,17 @@
 {% block title%}catalog{% endblock title %}
 
 {% block content %}
-Каталог товаров
+<div class="content">
+    {% if product_list%}
+        {% for product in product_list%}
+            <div class="product_card">
+                <img src="{{product.image.url}}">
+                <h3>{{product.price}}₽</h3>
+                <h4>{{product.name}}</h4>
+                <a href="{{product.get_absolute_url}}" class="button">Подробнее</a>
+            </div>
+        {%endfor%}
+    {%endif%}
+
+</div>
 {% endblock content %}
