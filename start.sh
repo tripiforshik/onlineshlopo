@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
 
-mkdir -p /data/media
+mkdir -p "${DATA_DIR:-/data}/media"
 
 python manage.py migrate --noinput
 python manage.py collectstatic --noinput
-
 python init_admin.py
 
 exec gunicorn online_shop.wsgi:application \
