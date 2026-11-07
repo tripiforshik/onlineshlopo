@@ -1,4 +1,4 @@
-from tkinter.font import names
+
 
 from django.contrib.auth.views import LoginView,PasswordChangeView,PasswordChangeDoneView
 from django.contrib.auth.views import LogoutView,PasswordResetView,PasswordResetDoneView,PasswordResetConfirmView,PasswordResetCompleteView
