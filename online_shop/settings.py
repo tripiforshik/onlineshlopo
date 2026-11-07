@@ -40,9 +40,11 @@ ALLOWED_HOSTS = ["localhost",'127.0.0.1']
 
 CSRF_TRUSTED_ORIGINS = []
 
-if SITE_HOST:
-    ALLOWED_HOSTS.append(SITE_HOST)
-    CSRF_TRUSTED_ORIGINS.append(f"https://{SITE_HOST}")
+render_host = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
+
+if render_host:
+    ALLOWED_HOSTS.append(render_host)
+    CSRF_TRUSTED_ORIGINS.append(f"https://{render_host}")
 
 SESSION_COOKIE_SECURE = not DEBUG
 CSRF_COOKIE_SECURE = not DEBUG
@@ -182,3 +184,6 @@ EMAIL_HOST_PASSWORD = os.environ["EMAIL_HOST_PASSWORD"]
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 EMAIL_TIMEOUT = 20
+
+YOOKASSA_SHOP_ID = os.environ.get("YOOKASSA_SHOP_ID", "")
+YOOKASSA_SECRET_KEY = os.environ.get("YOOKASSA_SECRET_KEY", "")

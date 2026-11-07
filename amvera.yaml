@@ -8,6 +8,6 @@ build:
   requirementsPath: requirements.txt
   useCache: false
 run:
-  command: bash start.sh
+  command: bash start-render.sh
   containerPort: 80
   persistenceMount: /data
