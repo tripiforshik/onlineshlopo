@@ -109,6 +109,11 @@ if os.environ.get("DB_HOST"):
             "CONN_MAX_AGE": 60,
         }
     }
+    print(
+        "Database host:",
+        repr(DATABASES["default"].get("HOST")),
+        flush=True,
+    )
 else:
     if not DEBUG:
         raise RuntimeError("Не заданы параметры PostgreSQL")
