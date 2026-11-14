@@ -172,7 +172,7 @@ STORAGES = {
 }
 LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = 'index'
-MEDIA_ROOT = BASE_DIR / '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 DATA_DIR = Path(os.environ.get("DATA_DIR", str(BASE_DIR)))
 MEDIA_URL='/media/'
 
